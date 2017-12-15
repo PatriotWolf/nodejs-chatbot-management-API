@@ -1,11 +1,12 @@
 const express = require('express')
 var bodyParser = require('body-parser');
 var request = require("request");
-
+var cors=require("cors")
 const app = express()
 const port= process.env.PORT||3000
 
 app.use(bodyParser.json());
+app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'))
 app.post('/iica',function(req,res){
 	var options = { method: 'POST',
