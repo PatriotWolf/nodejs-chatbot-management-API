@@ -14,7 +14,7 @@ app.post('/iica',function(req,res){
   					body: req.body.msg 
   					};
 
-	request.post(option, function(e, r, body){
+	request.post(options, function(e, r, body){
 		res.send(body)
 	});
 	
