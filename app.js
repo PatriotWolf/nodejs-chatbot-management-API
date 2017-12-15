@@ -10,12 +10,13 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.post('/iica',function(req,res){
 	var options = { method: 'POST',
   					url: 'http://13.76.181.19:8080/api/message',
-  					headers: {'content-type': 'text/plain' },
+  					headers: {'content-type': 'application/json' },
   					body: req.body.msg 
   					};
 
 	request.post(options, function(e, r, body){
-		res.send(body.content)
+		text=JSON.parse(body)
+		res.send(text)
 	});
 	
 })
