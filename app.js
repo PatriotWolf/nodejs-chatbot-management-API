@@ -10,7 +10,7 @@ app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'))
 app.post('/iica',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:8080/api/message',
+  					url: 'http://13.76.181.19:8484/api/message',
   					headers: {'content-type': 'application/json' },
   					body: req.body.msg 
   					};
