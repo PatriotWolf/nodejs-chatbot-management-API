@@ -52,7 +52,7 @@ app.post('/weather',function(req,res){
 			});
 			found++
 		}
-	}
+	} 
 	if(found==0)
 		res.send("No such place in my weather forecasts");
 	// var options = { method: 'GET',
