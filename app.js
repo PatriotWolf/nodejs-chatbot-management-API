@@ -24,6 +24,19 @@ app.post('/iica',function(req,res){
 	});
 	
 })
+app.post('/tm',function(req,res){
+	var options = { method: 'POST',
+  					url: 'http://13.76.181.19:8686/api/message',
+  					headers: {'content-type': 'application/json' },
+  					body: req.body.msg 
+  					};
+
+	request.post(options, function(e, r, body){
+		text=JSON.parse(body)
+		res.send(text)
+	});
+	
+})
 app.post('/weather',function(req,res){
 	var found=0;
 	var text=req.body.msg
