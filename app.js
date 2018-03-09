@@ -24,6 +24,19 @@ app.post('/sota',function(req,res){
 	});
 	
 })
+app.post('/movie',function(req,res){
+	var options = { method: 'POST',
+  					url: 'http://13.76.181.19:8080/api/message',
+  					headers: {'content-type': 'application/x-www-form-urlencoded' },
+  					form: { msg: req.body.msg } 
+  					};
+
+	request.post(options, function(e, r, body){
+		text=JSON.parse(body)
+		res.send(text)
+	});
+	
+})
 app.post('/iica',function(req,res){
 	var options = { method: 'POST',
   					url: 'http://13.76.181.19:8484/api/message',
