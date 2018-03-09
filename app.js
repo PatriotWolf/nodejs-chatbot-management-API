@@ -37,6 +37,19 @@ app.post('/movie',function(req,res){
 	});
 	
 })
+app.post('/mj',function(req,res){
+	var options = { method: 'POST',
+  					url: 'http://13.76.181.19:5004/message',
+  					headers: {'content-type': 'application/json'  },
+  					form: { msg: req.body.msg } 
+  					};
+
+	request.post(options, function(e, r, body){
+		text=JSON.parse(body)
+		res.send(text)
+	});
+	
+})
 app.post('/trump',function(req,res){
 	var options = { method: 'POST',
   					url: 'http://13.76.181.19:1980/api/message',
