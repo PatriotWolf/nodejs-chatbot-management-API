@@ -39,9 +39,9 @@ app.post('/movie',function(req,res){
 })
 app.post('/trump',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:5000/message',
-  					headers: {'content-type': 'application/x-www-form-urlencoded' },
-  					form: { msg: req.body.msg } 
+  					url: 'http://13.76.181.19:1980/api/message',
+  					headers: {'content-type': 'application/json' },
+  					body: req.body.msg 
   					};
 
 	request.post(options, function(e, r, body){
