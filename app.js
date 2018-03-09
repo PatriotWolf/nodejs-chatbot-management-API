@@ -40,7 +40,7 @@ app.post('/movie',function(req,res){
 app.post('/mj',function(req,res){
 	var options = { method: 'POST',
   					url: 'http://13.76.181.19:5004/message',
-  					headers: {'content-type': 'application/json'  },
+  					headers: {'content-type': 'application/json' },
   					form: { msg: req.body.msg } 
   					};
 
