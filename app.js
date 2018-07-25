@@ -13,7 +13,7 @@ app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'))
 app.post('/sota',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:8080/api/message',
+  					url: 'test:8080/api/message',
   					headers: {'content-type': 'application/json' },
   					body: req.body.msg 
   					};
@@ -26,7 +26,7 @@ app.post('/sota',function(req,res){
 })
 app.post('/movie',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:5001/message',
+  					url: 'test:5001/message',
   					headers: {'content-type': 'application/x-www-form-urlencoded' },
   					form: { msg: req.body.msg } 
   					};
@@ -40,7 +40,7 @@ app.post('/movie',function(req,res){
 app.post('/mj',function(req,res){
 	var msg=JSON.stringify({ msg: req.body.msg } )
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:5004/message',
+  					url: 'test:5004/message',
   					headers: {'content-type': 'application/json' },
   					body: msg
   					};
@@ -54,7 +54,7 @@ app.post('/mj',function(req,res){
 app.post('/aris',function(req,res){
 	var msg=JSON.stringify({ msg: req.body.msg } )
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:5003/message',
+  					url: 'test:5003/message',
   					headers: {'content-type': 'application/json' },
   					body: msg
   					};
@@ -67,7 +67,7 @@ app.post('/aris',function(req,res){
 })
 app.post('/trump',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:1980/api/message',
+  					url: 'test:1980/api/message',
   					headers: {'content-type': 'application/json' },
   					body: req.body.msg 
   					};
@@ -80,7 +80,7 @@ app.post('/trump',function(req,res){
 })
 app.post('/iica',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:8484/api/message',
+  					url: 'test:8484/api/message',
   					headers: {'content-type': 'application/json' },
   					body: req.body.msg 
   					};
@@ -93,7 +93,7 @@ app.post('/iica',function(req,res){
 })
 app.post('/tm',function(req,res){
 	var options = { method: 'POST',
-  					url: 'http://13.76.181.19:8686/api/message',
+  					url: 'test:8686/api/message',
   					headers: {'content-type': 'application/json' },
   					body: req.body.msg 
   					};
@@ -135,19 +135,6 @@ app.post('/weather',function(req,res){
 	} 
 	if(found==0)
 		res.send("No such place in my weather forecasts");
-	// var options = { method: 'GET',
-	//   url: 'http://api.openweathermap.org/data/2.5/forecast',
-	//   qs: { id: '524901', APPID: '5b207516f53b3a101474dd28e103f625' },
-	//   headers: 
-	//    { 'Postman-Token': 'e4cc59fa-4a44-d5a7-b545-713183e294c7',
-	//      'Cache-Control': 'no-cache' } };
-
-	// request(options, function (error, response, body) {
-	//   if (error) throw new Error(error);
-
-	//   console.log(body);
-	// });
-	
 })
 app.post('/dada',function(req,res){
 	res.send("hey")
